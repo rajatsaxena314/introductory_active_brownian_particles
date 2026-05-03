@@ -4,7 +4,6 @@ This repository contains numerical simulations and analysis tools for studying *
 The project is designed for exploratory research and numerical experimentation with stochastic particle systems.
 
 The topics appear in this repo as they do in [Active Brownian Particles. From Individual to Collective Stochastic Dynamics](https://arxiv.org/abs/1202.2442)
----
 
 ## Overview
 
