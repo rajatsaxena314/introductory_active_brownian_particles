@@ -33,7 +33,7 @@ def integrate_langevin_leapfrog(
         v_half = (
             v[i - 1]
             + 0.5 * dt * (-g * v[i - 1] / m)
-            + 0.5 * np.sqrt(D * dt) * R1
+            + np.sqrt(D * dt/2) * R1
         )
 
         # Drift: full-step position update
@@ -44,7 +44,7 @@ def integrate_langevin_leapfrog(
         v[i] = (
             v_half
             + 0.5 * dt * (-g * v_half / m)
-            + 0.5 * np.sqrt(D * dt) * R2
+            + np.sqrt(D * dt/2) * R2
         )
 
     return time, x, v

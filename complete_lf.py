@@ -38,7 +38,7 @@ def integrate_langevin_leapfrog_with_potential(
         v_half = (
             v[i - 1]
             + 0.5 * dt * (-g * v[i - 1] / m)
-            + 0.5 * np.sqrt(D * dt) * R1
+            + np.sqrt(D * dt/2) * R1
             + 0.5 * dt * (-grad(U, x[i-1], h)/m)
         )
 
@@ -50,7 +50,7 @@ def integrate_langevin_leapfrog_with_potential(
         v[i] = (
             v_half
             + 0.5 * dt * (-g * v_half / m)
-            + np.sqrt(D * dt) * R2
+            + np.sqrt(D * dt/2) * R2
             + 0.5 * dt * (-grad(U, x[i], h)/m)
         )
 
